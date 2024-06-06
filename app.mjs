@@ -1,6 +1,6 @@
-const express = require('express');
-const { DataTypes } = require('sequelize');
-const sequelize = require('./db-connection.js');
+import express from 'express';
+import { DataTypes } from 'sequelize';
+import sequelize from './db-connection.mjs';
 
 const app = express();
 
