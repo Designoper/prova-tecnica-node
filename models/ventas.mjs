@@ -13,11 +13,10 @@ const Venta = sequelize.define('Venta', {
 	trabajador: {
 		type: DataTypes.INTEGER,
 		allowNull: false
-	},
-	fecha_venta: {
-		type: DataTypes.DATE,
-		allowNull: false
-	},
+	}
+}, {
+	updatedAt: false,
+	createdAt: 'fecha_venta',
 });
 
 export default Venta;
