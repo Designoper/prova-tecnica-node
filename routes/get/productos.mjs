@@ -1,9 +1,9 @@
-const getEmpleados = (app, model) => {
-	const RUTA = '/empleados';
+const getProductos = (app, model) => {
+	const RUTA = '/productos';
 	app.get(RUTA, async (_req, res) => {
 		try {
-			const EMPLEADOS = await model.findAll({});
-			return res.json({ EMPLEADOS });
+			const PRODUCTOS = await model.findAll({});
+			return res.json({ PRODUCTOS });
 		}
 		catch (error) {
 			console.log('Error', error);
@@ -12,4 +12,4 @@ const getEmpleados = (app, model) => {
 	});
 }
 
-export default getEmpleados;
+export default getProductos;

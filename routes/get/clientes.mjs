@@ -1,5 +1,6 @@
 const getClientes = (app, model) => {
-	app.get('/clientes', async (_req, res) => {
+	const RUTA = '/clientes';
+	app.get(RUTA, async (_req, res) => {
 		try {
 			const CLIENTES = await model.findAll({});
 			return res.json({ CLIENTES });
