@@ -1,9 +1,19 @@
 import sequelize from './db-connection.mjs';
 import express from 'express';
+
 import Producto from './models/productos.mjs';
 import Cliente from './models/clientes.mjs';
+import Empleado from './models/empleados.mjs';
+
+
+// MARK: GET IMPORTS
+
+import getClientes from './routes/get/clientes.mjs';
+import getClientesId from './routes/get/clientes-id.mjs';
+import getEmpleados from './routes/get/empleados.mjs';
 
 const APP = express();
+const PORT = 3000;
 
 // Crea la tabla si no existe
 sequelize.sync()
@@ -14,17 +24,9 @@ sequelize.sync()
 		console.log('Error:', error);
 	});
 
-
-APP.get('/clientes', async (_req, res) => {
-	try {
-		const CLIENTES = await Cliente.findAll({});
-		return res.json({ CLIENTES });
-	}
-	catch (error) {
-		console.log('Error', error);
-		return res.status(500).json({ message: 'Internal server error' });
-	}
-});
+getClientes(APP, Cliente);
+getClientesId(APP, Cliente);
+getEmpleados(APP, Empleado);
 
 // Ruta para crear un usuario
 APP.post('/clientes/nuevo', async (req, res) => {
@@ -39,5 +41,5 @@ APP.post('/clientes/nuevo', async (req, res) => {
 	}
 });
 
-const PORT = 3000;
+
 APP.listen(PORT, () => console.log(`Servidor iniciado en localhost:${PORT}`));
