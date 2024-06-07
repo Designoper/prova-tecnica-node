@@ -3,7 +3,7 @@ const getVenta = (app, model) => {
 	app.get(RUTA, async (req, res) => {
 		try {
 			const ID = req.params.id;
-			const VENTA = await model.findAll({ where: { id: ID } });
+			const VENTA = await model.findOne({ where: { id: ID } });
 			return res.json({ VENTA });
 		}
 		catch (error) {

@@ -3,7 +3,7 @@ const getEmpleado = (app, model) => {
 	app.get(RUTA, async (req, res) => {
 		try {
 			const ID = req.params.id;
-			const EMPLEADO = await model.findAll({ where: { id: ID } });
+			const EMPLEADO = await model.findOne({ where: { id: ID } });
 			return res.json({ EMPLEADO });
 		}
 		catch (error) {
