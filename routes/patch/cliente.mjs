@@ -1,5 +1,5 @@
 const patchCliente = (app, model) => {
-	const RUTA = '/clientes:id';
+	const RUTA = '/clientes/:id';
 	app.patch(RUTA, async (req, res) => {
 		try {
 			const ID = req.params.id;
