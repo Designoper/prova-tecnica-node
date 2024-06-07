@@ -22,6 +22,7 @@ import postProducto from './routes/post/producto.mjs';
 
 // MARK: PATCH IMPORTS
 import patchCliente from './routes/patch/cliente.mjs';
+import patchVenta from './routes/patch/venta.mjs';
 
 // MARK: PUT IMPORTS
 import putProducto from './routes/put/producto.mjs';
@@ -43,6 +44,7 @@ postCliente(APP, Cliente);
 postProducto(APP, Producto);
 
 patchCliente(APP, Cliente);
+patchVenta(APP, Venta);
 
 putProducto(APP, Producto);
 
