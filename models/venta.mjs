@@ -1,6 +1,5 @@
 import sequelize from "../db-connection.mjs";
 import { DataTypes } from 'sequelize';
-import Empleado from "./empleado.mjs";
 
 const Venta = sequelize.define('Venta', {
 	producto: {
