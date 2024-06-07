@@ -1,5 +1,5 @@
 const getCliente = (app, model) => {
-	const RUTA = '/clientes:id';
+	const RUTA = '/clientes/:id';
 	app.get(RUTA, async (req, res) => {
 		try {
 			const ID = req.params.id;

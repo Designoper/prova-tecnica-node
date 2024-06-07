@@ -1,5 +1,5 @@
 const getEmpleado = (app, model) => {
-	const RUTA = '/empleados:id';
+	const RUTA = '/empleados/:id';
 	app.get(RUTA, async (req, res) => {
 		try {
 			const ID = req.params.id;

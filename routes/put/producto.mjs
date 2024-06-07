@@ -1,5 +1,5 @@
 const putProducto = (app, model) => {
-	const RUTA = '/productos:id';
+	const RUTA = '/productos/:id';
 	app.put(RUTA, async (req, res) => {
 		const ID = req.params.id;
 		const NOMBRE = req.body?.nombre;

@@ -1,5 +1,5 @@
 const getProducto = (app, model) => {
-	const RUTA = '/productos:id';
+	const RUTA = '/productos/:id';
 	app.get(RUTA, async (req, res) => {
 		try {
 			const ID = req.params.id;

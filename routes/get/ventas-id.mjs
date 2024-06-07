@@ -1,5 +1,5 @@
 const getVenta = (app, model) => {
-	const RUTA = '/ventas:id';
+	const RUTA = '/ventas/:id';
 	app.get(RUTA, async (req, res) => {
 		try {
 			const ID = req.params.id;
