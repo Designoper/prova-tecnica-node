@@ -11,4 +11,8 @@ const sequelize = new Sequelize(DATABASE, USERNAME, PASSWORD, {
   dialect: DIALECT
 });
 
+sequelize.sync()
+  .then(() => console.log('Sincronización exitosa'))
+  .catch((error) => console.log('Error:', error));
+
 export default sequelize;

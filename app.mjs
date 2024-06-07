@@ -1,24 +1,12 @@
-import sequelize from './db-connection.mjs';
-import express from 'express';
-
-const APP = express();
-APP.use(express.json());
-const PORT = 3000;
-
-// APP.use((_req, res, next) => {
-//     res.setHeader('Content-Type', 'application/json');
-//     next();
-// });
+import APP from './express.mjs';
 
 // MARK: MODEL IMPORTS
-
 import Cliente from './models/cliente.mjs';
 import Empleado from './models/empleado.mjs';
 import Producto from './models/producto.mjs';
 import Venta from './models/venta.mjs';
 
 // MARK: GET IMPORTS
-
 import getClientes from './routes/get/clientes.mjs';
 import getCliente from './routes/get/clientes-id.mjs';
 import getEmpleados from './routes/get/empleados.mjs';
@@ -29,28 +17,15 @@ import getVentas from './routes/get/ventas.mjs';
 import getVenta from './routes/get/ventas-id.mjs';
 
 // MARK: POST IMPORTS
-
 import postCliente from './routes/post/cliente.mjs';
 import postProducto from './routes/post/producto.mjs';
 
 // MARK: PATCH IMPORTS
-
 import patchCliente from './routes/patch/cliente.mjs';
 
 // MARK: PUT IMPORTS
-
 import putProducto from './routes/put/producto.mjs';
 
-
-
-// Crea la tabla si no existe
-sequelize.sync()
-	.then(() => {
-		console.log('Tabla creada');
-	})
-	.catch((error) => {
-		console.log('Error:', error);
-	});
 
 getClientes(APP, Cliente);
 getCliente(APP, Cliente);
@@ -71,4 +46,6 @@ patchCliente(APP, Cliente);
 
 putProducto(APP, Producto);
 
-APP.listen(PORT, () => console.log(`Servidor iniciado en localhost:${PORT}`));
+const PORT = 3000;
+
+APP.listen(PORT, () => console.log(`App escuchando en localhost:${PORT}`));
