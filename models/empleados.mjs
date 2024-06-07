@@ -8,11 +8,10 @@ const Empleado = sequelize.define('Empleado', {
 	},
 	password: {
 		type: DataTypes.STRING,
-		set(value) {
-			// Storing passwords in plaintext in the database is terrible.
-			// Hashing the value with an appropriate cryptographic hash function is better.
-			this.setDataValue('password', hash(value));
-		},
+		// set(value) {
+		// 	this.setDataValue('password', hash(value));
+		// },
+		allowNull: false
 	},
 }, {
 	timestamps: false,

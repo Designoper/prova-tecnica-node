@@ -1,10 +1,10 @@
-const getProductosId = (app, model) => {
+const getProducto = (app, model) => {
 	const RUTA = '/productos:id';
 	app.get(RUTA, async (req, res) => {
 		try {
 			const ID = req.params.id;
-			const PRODUCTOS = await model.findAll({ where: { id: ID } });
-			return res.json({ PRODUCTOS });
+			const PRODUCTO = await model.findAll({ where: { id: ID } });
+			return res.json({ PRODUCTO });
 		}
 		catch (error) {
 			console.log('Error', error);
@@ -13,4 +13,4 @@ const getProductosId = (app, model) => {
 	});
 }
 
-export default getProductosId;
+export default getProducto;

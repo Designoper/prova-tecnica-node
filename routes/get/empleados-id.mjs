@@ -1,10 +1,10 @@
-const getEmpleadosId = (app, model) => {
+const getEmpleado = (app, model) => {
 	const RUTA = '/empleados:id';
 	app.get(RUTA, async (req, res) => {
 		try {
 			const ID = req.params.id;
-			const EMPLEADOS = await model.findAll({ where: { id: ID } });
-			return res.json({ EMPLEADOS });
+			const EMPLEADO = await model.findAll({ where: { id: ID } });
+			return res.json({ EMPLEADO });
 		}
 		catch (error) {
 			console.log('Error', error);
@@ -13,4 +13,4 @@ const getEmpleadosId = (app, model) => {
 	});
 }
 
-export default getEmpleadosId;
+export default getEmpleado;

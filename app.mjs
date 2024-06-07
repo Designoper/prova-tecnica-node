@@ -20,18 +20,18 @@ import Venta from './models/ventas.mjs';
 // MARK: GET IMPORTS
 
 import getClientes from './routes/get/clientes.mjs';
-import getClientesId from './routes/get/clientes-id.mjs';
+import getCliente from './routes/get/clientes-id.mjs';
 import getEmpleados from './routes/get/empleados.mjs';
-import getEmpleadosId from './routes/get/empleados-id.mjs';
+import getEmpleado from './routes/get/empleados-id.mjs';
 import getProductos from './routes/get/productos.mjs';
-import getProductosId from './routes/get/productos-id.mjs';
+import getProducto from './routes/get/productos-id.mjs';
 import getVentas from './routes/get/ventas.mjs';
-import getVentasId from './routes/get/ventas-id.mjs';
+import getVenta from './routes/get/ventas-id.mjs';
 
 // MARK: POST IMPORTS
 
 import postClientes from './routes/post/clientes.mjs';
-
+import postProductos from './routes/post/producto.mjs';
 
 
 
@@ -45,18 +45,19 @@ sequelize.sync()
 	});
 
 getClientes(APP, Cliente);
-getClientesId(APP, Cliente);
+getCliente(APP, Cliente);
 
 getEmpleados(APP, Empleado);
-getEmpleadosId(APP, Empleado);
+getEmpleado(APP, Empleado);
 
 getProductos(APP, Producto);
-getProductosId(APP, Producto);
+getProducto(APP, Producto);
 
 getVentas(APP, Venta);
-getVentasId(APP, Venta);
+getVenta(APP, Venta);
 
 
 postClientes(APP, Cliente);
+postProductos(APP, Producto);
 
 APP.listen(PORT, () => console.log(`Servidor iniciado en localhost:${PORT}`));

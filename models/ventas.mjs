@@ -1,5 +1,6 @@
 import sequelize from "../db-connection.mjs";
 import { DataTypes } from 'sequelize';
+import Empleado from "./empleados.mjs";
 
 const Venta = sequelize.define('Venta', {
 	producto: {
@@ -10,7 +11,7 @@ const Venta = sequelize.define('Venta', {
 		type: DataTypes.STRING,
 		allowNull: false
 	},
-	trabajador: {
+	empleado: {
 		type: DataTypes.INTEGER,
 		allowNull: false
 	}
