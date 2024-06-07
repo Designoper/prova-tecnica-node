@@ -1,4 +1,4 @@
-const postClientes = (app, model) => {
+const postCliente = (app, model) => {
 	const RUTA = '/clientes/nuevo';
 	app.post(RUTA, async (req, res) => {
 		const NOMBRE = req.body?.nombre;
@@ -15,4 +15,4 @@ const postClientes = (app, model) => {
 	});
 }
 
-export default postClientes;
+export default postCliente;

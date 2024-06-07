@@ -12,10 +12,10 @@ const PORT = 3000;
 
 // MARK: MODEL IMPORTS
 
-import Cliente from './models/clientes.mjs';
-import Empleado from './models/empleados.mjs';
-import Producto from './models/productos.mjs';
-import Venta from './models/ventas.mjs';
+import Cliente from './models/cliente.mjs';
+import Empleado from './models/empleado.mjs';
+import Producto from './models/producto.mjs';
+import Venta from './models/venta.mjs';
 
 // MARK: GET IMPORTS
 
@@ -30,8 +30,16 @@ import getVenta from './routes/get/ventas-id.mjs';
 
 // MARK: POST IMPORTS
 
-import postClientes from './routes/post/clientes.mjs';
-import postProductos from './routes/post/producto.mjs';
+import postCliente from './routes/post/cliente.mjs';
+import postProducto from './routes/post/producto.mjs';
+
+// MARK: PATCH IMPORTS
+
+import patchCliente from './routes/patch/cliente.mjs';
+
+// MARK: PUT IMPORTS
+
+import putProducto from './routes/put/producto.mjs';
 
 
 
@@ -57,7 +65,12 @@ getVentas(APP, Venta);
 getVenta(APP, Venta);
 
 
-postClientes(APP, Cliente);
-postProductos(APP, Producto);
+postCliente(APP, Cliente);
+postProducto(APP, Producto);
+
+
+patchCliente(APP, Cliente);
+
+putProducto(APP, Producto);
 
 APP.listen(PORT, () => console.log(`Servidor iniciado en localhost:${PORT}`));
