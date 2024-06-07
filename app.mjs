@@ -64,10 +64,8 @@ getProducto(APP, Producto);
 getVentas(APP, Venta);
 getVenta(APP, Venta);
 
-
 postCliente(APP, Cliente);
 postProducto(APP, Producto);
-
 
 patchCliente(APP, Cliente);
 
