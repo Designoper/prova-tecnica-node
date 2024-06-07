@@ -28,6 +28,10 @@ import getProductosId from './routes/get/productos-id.mjs';
 import getVentas from './routes/get/ventas.mjs';
 import getVentasId from './routes/get/ventas-id.mjs';
 
+// MARK: POST IMPORTS
+
+import postClientes from './routes/post/clientes.mjs';
+
 
 
 
@@ -53,55 +57,6 @@ getVentas(APP, Venta);
 getVentasId(APP, Venta);
 
 
-// APP.post('/clientes/nuevo', async (req, res) => {
-// 	try {
-// 		const nombre = req.params.nombre;
-// 		const direccion = req.params.direccion;
-// 		const telefono = req.params.telefono;
-
-// 		const CLIENT = ({ nombre: nombre, direccion: direccion, telefono: telefono });
-// 		await Cliente.create(CLIENT);
-
-// 		res.json(nombre);
-// 	} catch (error) {
-// 		res.status(500).json({ error: error.message });
-// 	}
-// });
-
-
-
-APP.post('/clientes/nuevo', async (req, res) => {
-	const NOMBRE = req.body.nombre; // Obtén los datos del cuerpo de la solicitud
-	const DIRECCION = req.body.direccion; // Obtén los datos del cuerpo de la solicitud
-	const TELEFONO = req.body.telefono; // Obtén los datos del cuerpo de la solicitud
-
-	try {
-		const newCliente = await Cliente.create({ nombre: NOMBRE, direccion: DIRECCION, telefono: TELEFONO }); // Crea un nuevo cliente en la base de datos
-		res.status(201).json(newCliente); // Devuelve el cliente creado
-	} catch (error) {
-		console.error('Error al crear el cliente:', error);
-		res.status(500).json({ error: 'Error interno del servidor' });
-	}
-});
-
-
-// APP.post('/clientes/nuevo', async (req, res) => {
-// 	try {
-// 	  const { nombre, direccion, telefono } = req.body; // Utiliza req.body en lugar de req.params
-
-// 	  // Crea un nuevo cliente en la base de datos
-// 	  const newClient = await Cliente.create({
-// 		nombre,
-// 		direccion,
-// 		telefono
-// 	  });
-
-// 	  res.status(201).json(newClient); // Devuelve el cliente creado
-// 	} catch (error) {
-// 	  console.error('Error al crear el cliente:', error);
-// 	  res.status(500).json({ error: 'Error interno del servidor' });
-// 	}
-//   });
-
+postClientes(APP, Cliente);
 
 APP.listen(PORT, () => console.log(`Servidor iniciado en localhost:${PORT}`));
