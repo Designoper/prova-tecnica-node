@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
 
-const DATABASE = 'prueba';
+const DATABASE = 'tienda_informatica';
 const USERNAME = 'root';
 const PASSWORD = '';
 const HOST = 'localhost';
