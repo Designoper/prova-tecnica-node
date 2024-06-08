@@ -6,7 +6,11 @@ const postProducto = (app, model) => {
 		const CANTIDAD_DISPONIBLE = req.body?.cantidad_disponible;
 
 		try {
-			const newProducto = await model.create({ nombre: NOMBRE, precio: PRECIO, cantidad_disponible: CANTIDAD_DISPONIBLE });
+			const newProducto = await model.create({
+				nombre: NOMBRE,
+				precio: PRECIO,
+				cantidad_disponible: CANTIDAD_DISPONIBLE
+			});
 			res.status(201).json(newProducto);
 		} catch (error) {
 			console.error('Error al crear el cliente:', error);

@@ -4,12 +4,10 @@ const patchEmpleado = (app, model) => {
 		try {
 			const ID = req.params.id;
 			const NOMBRE = req.body?.nombre;
-			const PASSWORD = req.body?.password;
 
 			const EMPLEADO = await model.findOne({ where: { id: ID } });
 			EMPLEADO.set({
 				nombre: NOMBRE,
-				password: PASSWORD
 			});
 
 			await EMPLEADO.save();
