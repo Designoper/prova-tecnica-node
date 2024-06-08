@@ -19,7 +19,6 @@ import getVenta from './routes/get/ventas-id.mjs';
 // MARK: POST IMPORTS
 import postCliente from './routes/post/cliente.mjs';
 import postProducto from './routes/post/producto.mjs';
-import postEmpleado from './routes/post/registro.mjs';
 
 
 // MARK: PATCH IMPORTS
@@ -45,7 +44,6 @@ getVenta(APP, Venta);
 
 postCliente(APP, Cliente);
 postProducto(APP, Producto);
-postEmpleado(APP, Empleado);
 
 patchCliente(APP, Cliente);
 patchVenta(APP, Venta);
