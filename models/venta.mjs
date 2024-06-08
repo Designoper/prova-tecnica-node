@@ -1,10 +1,10 @@
-import sequelize from "../db-connection.mjs";
+import connection from "../db-connection.mjs";
 import { DataTypes } from 'sequelize';
 import Producto from "./producto.mjs";
 import Cliente from "./cliente.mjs";
 import Empleado from "./empleado.mjs";
 
-const Venta = sequelize.define('Venta', {
+const Venta = connection.define('Venta', {
 	productoId: {
 		type: DataTypes.INTEGER,
 		allowNull: false,

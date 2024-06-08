@@ -1,7 +1,7 @@
-import sequelize from "../db-connection.mjs";
+import connection from "../db-connection.mjs";
 import { DataTypes } from 'sequelize';
 
-const Cliente = sequelize.define('Cliente', {
+const Cliente = connection.define('Cliente', {
 	nombre: {
 		type: DataTypes.STRING,
 		allowNull: false
